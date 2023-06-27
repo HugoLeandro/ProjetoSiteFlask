@@ -1,0 +1,50 @@
+body{
+
+    background-image: linear-gradient(rgb(21, 25, 29), rgb(21,25,29));
+    height: 100vh;
+    color: white;
+}
+
+.card{
+  width: 450px;
+  border: none;
+  border-radius: 10px;
+
+  background-color: #212529;
+}
+
+
+
+.stats{
+
+      background: #515559 !important;
+
+    color: #ffff !important;
+}
+.articles{
+  font-size:10px;
+  color: #7FFFFFF;
+}
+.number1{
+  font-weight:500;
+}
+.followers{
+    font-size:10px;
+  color: #7FFFFFF;
+
+}
+.number2{
+  font-weight:500;
+}
+.rating{
+    font-size:10px;
+  color: #7FFFFFF;
+}
+.number3{
+  font-weight:500;
+}
+
+.meupost {
+      background: #212529 !important;
+ word-wrap: break-word; !important;
+}

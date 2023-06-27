@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid container">
+    <a class="navbar-brand text-info" href="{{ url_for('home') }}">TechWizardry</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="{{ url_for('home') }}" href="/">Início</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('usuarios') }}">Usuários</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('contato') }}">Contato</a>
+        </li>
+      </ul>
+      <ul class="d-flex navbar-nav">
+        {% if current_user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('criar_post') }}">Criar Post</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('perfil') }}">Meu Perfil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('sair') }}">Sair</a>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('login') }}">Criar Conta</a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>

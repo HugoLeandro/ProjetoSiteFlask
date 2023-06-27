@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="container">
+        <h2 style="color: #6610f2">Explore o Mundo da Tecnologia e Programação</h2>
+        <div class="container mt-5">
+        <div class=" p-blank container ">
+            <div class="col bg-dark ">
+                <form method="POST" action="" class="border-none p-4 mt-2">
+                    {{ form.csrf_token }}
+                    <legend>Criar Post</legend>
+                    <fieldset>
+                        <div class="form-group">
+                            {{ form.titulo.label(class="form-control-label") }}
+                            {% if form.titulo.errors %}
+                                {{ form.titulo(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in form.titulo.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ form.titulo(class="form-control btn-outline-light text-dark mt-2") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group mt-2">
+                            {{ form.corpo.label(class="form-control-label") }}
+                            {% if form.corpo.errors %}
+                                {{ form.corpo(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in form.corpo.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ form.corpo(class="form-control btn-outline-light text-dark mt-2") }}
+                            {% endif %}
+                        </div>
+                    </fieldset>
+                    {{ form.botao_submit(class="btn btn-info mt-3 btn-outline-light text-dark") }}
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+{% endblock %}

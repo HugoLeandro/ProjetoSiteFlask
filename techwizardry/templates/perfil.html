@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card p-blank">
+        <div class="d-flex align-items-center">
+            <div class="image pe-2 mt-2 mb-2 ms-2"> <img src="{{ foto_perfil }}" class="rounded" width="200" >
+                </div>
+                    <div class="ml-3 w-100">
+                       <h4 class="mb-0 mt-0">{{ current_user.username }}</h4>
+                       <span>{{ current_user.email }}</span>
+                       <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+                           {% if 'Não Informado' in current_user.cursos or current_user.cursos == '' %}
+                                <div class="ps-5 d-flex flex-column"> <span class="articles">LINGUAGENS</span> <span class="number1 text-center"></span>0</div>
+                           {% else %}
+                                <div class="ps-5 d-flex flex-column"> <span class="articles">LINGUAGENS</span> <span class="number1 text-center"> {{ current_user.cursos.count(';') + 1}}</span> </div>
+                           {% endif %}
+                                <div class="pe-5 d-flex flex-column">
+                                   <span class="rating">POSTS</span>
+                                   <span class="number3 text-center">{{ current_user.contar_posts() }}</span>
+                                </div>
+                       </div>
+                       <div class="button mt-2 d-flex flex-row align-items-center  bg-info">
+                        <a class="w-100" href="{{ url_for('editar_perfil') }}">
+                            <button class="btn btn-sm btn-outline-light text-dark w-100">Editar Perfil</button>
+                        </a>
+                       </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+        <div class="row justify-content-center mt-2">
+            <div class="col col-4" style="text-align: center">
+                {% if 'Não Informado' in current_user.cursos or current_user.cursos == '' %}
+                {% else %}
+                <strong>Linguagens</strong><br>
+                    {% for curso in current_user.cursos.split(';') %}
+                 <button type="button" class="btn btn-danger mt-2">{{ curso }}</button>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+{% block form_editar_perfil %}
+
+{% endblock %}
+{% endblock %}

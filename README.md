@@ -1,5 +1,4 @@
 # TechWizardry 
-## Verão-1.0
 
 
 Este projeto é uma rede social para programadores, onde os usuários podem fazer posts, adicionar uma foto de perfil e cadastrar nome, e-mail e senha. <br>

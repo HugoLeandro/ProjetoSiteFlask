@@ -19,3 +19,7 @@ login_manager.login_view = 'login'
 login_manager.login_message_category = 'alert-info'
 
 from techwizardry import routes
+from .models import Usuario, Post
+
+with app.app_context():
+    database.create_all()

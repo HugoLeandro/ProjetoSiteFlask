@@ -24,7 +24,6 @@ Priorizamos a segurança dos nossos usuários. As senhas são criptografadas uti
 
 Estas são apenas algumas das funcionalidades que o TechWizardry oferece. Explore e descubra mais recursos enquanto você se conecta, aprende e compartilha conhecimento com outros desenvolvedores.
 
-Desejamos a todos uma experiência gratificante e produtiva no TechWizardry. Estamos animados para ver a comunidade crescer e prosperar.
 
 <br>
 
